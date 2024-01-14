@@ -1,0 +1,44 @@
+﻿@model Product
+
+<form method="post" asp-action="Delete">
+    <input asp-for="Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <!-- <h2 class="text-primary">Insert Service/Product</h2> -->
+        </div>
+
+        <div class="mb-1 row">
+            <label asp-for="Intereste_Product_Service" class="col-sm-2 col-form-label">Interested Product/Service</label>
+            <div class="col-sm-6">
+                <select asp-for="Intereste_Product_Service" disabled class="form-select" id="inputInterestedProductService">
+                    <option selected disabled value="">Select product/service interested</option>
+                    <option value="1">Cement</option>
+                    <option value="2">Light</option>
+                    <option value="3">Bike</option>
+                    <option value="4">Car</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-1 row">
+            <label asp-for="Quantity" class="col-sm-2 col-form-label">Quantity</label>
+            <div class="col-sm-3">
+                <input asp-for="Quantity" disabled class="form-control" id="inputQuantity">
+            </div>
+
+            <label asp-for="Unit" class="col-sm-1 col-form-label">Unit</label>
+            <div class="col-sm-2">
+                <input asp-for="Unit" disabled class="form-control" id="inputUnit">
+            </div>
+
+            <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-primary" style="width:150px">Back to list</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
